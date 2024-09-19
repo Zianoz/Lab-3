@@ -15,9 +15,19 @@ namespace NumbersGame
             Random random = new Random();
             int number = random.Next(1, 20);
             Console.WriteLine("Jag tänker på ett nummer. Gissa vilket det är");
-            int spelare = int.Parse(Console.ReadLine());
-            
-        
+            int player = int.Parse(Console.ReadLine());
+
+            if (number == player)
+            {
+                Console.WriteLine("Wohoo! Du klarade det!");
+            }
+            else
+            {
+                Console.WriteLine("FEL!");
+            }
+
+
+
 
 
 
