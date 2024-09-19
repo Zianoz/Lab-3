@@ -1,0 +1,7 @@
+C:\Users\Zianp\OneDrive\Documents\GitHub\Lab-3\NumberGame\NumberGame\obj\Debug\NumberGame.csproj.AssemblyReference.cache
+C:\Users\Zianp\OneDrive\Documents\GitHub\Lab-3\NumberGame\NumberGame\obj\Debug\NumberGame.csproj.CoreCompileInputs.cache
+C:\Users\Zianp\OneDrive\Documents\GitHub\Lab-3\NumberGame\NumberGame\bin\Debug\NumberGame.exe.config
+C:\Users\Zianp\OneDrive\Documents\GitHub\Lab-3\NumberGame\NumberGame\bin\Debug\NumberGame.exe
+C:\Users\Zianp\OneDrive\Documents\GitHub\Lab-3\NumberGame\NumberGame\bin\Debug\NumberGame.pdb
+C:\Users\Zianp\OneDrive\Documents\GitHub\Lab-3\NumberGame\NumberGame\obj\Debug\NumberGame.exe
+C:\Users\Zianp\OneDrive\Documents\GitHub\Lab-3\NumberGame\NumberGame\obj\Debug\NumberGame.pdb

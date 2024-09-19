@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Zianp\\Documents\\GitHub\\Lab-3\\NumberGame\\",
+  "WorkspaceRootPath": "C:\\Users\\Zianp\\OneDrive\\Documents\\GitHub\\Lab-3\\NumberGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A44D88AB-CA9C-4F17-A9A7-2C34D02F2672}|NumberGame\\NumberGame.csproj|c:\\users\\zianp\\documents\\github\\lab-3\\numbergame\\numbergame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A44D88AB-CA9C-4F17-A9A7-2C34D02F2672}|NumberGame\\NumberGame.csproj|c:\\users\\zianp\\onedrive\\documents\\github\\lab-3\\numbergame\\numbergame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A44D88AB-CA9C-4F17-A9A7-2C34D02F2672}|NumberGame\\NumberGame.csproj|solutionrelative:numbergame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -14,17 +14,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Zianp\\Documents\\GitHub\\Lab-3\\NumberGame\\NumberGame\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Zianp\\OneDrive\\Documents\\GitHub\\Lab-3\\NumberGame\\NumberGame\\Program.cs",
               "RelativeDocumentMoniker": "NumberGame\\Program.cs",
-              "ToolTip": "C:\\Users\\Zianp\\Documents\\GitHub\\Lab-3\\NumberGame\\NumberGame\\Program.cs",
+              "ToolTip": "C:\\Users\\Zianp\\OneDrive\\Documents\\GitHub\\Lab-3\\NumberGame\\NumberGame\\Program.cs",
               "RelativeToolTip": "NumberGame\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-17T11:46:36.143Z",
               "EditorCaption": ""
