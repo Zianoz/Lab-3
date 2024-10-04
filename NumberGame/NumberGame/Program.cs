@@ -1,104 +1,121 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using System.Media;
-using System.Net.NetworkInformation;
-using System.Runtime.CompilerServices;
+using System.Reflection.PortableExecutable;
 using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace NumbersGame
+namespace NumbersGameReworked
 {
     internal class Program
     {
-
         static void Main(string[] args)
         {
+            //A default bool value for the game
+            bool token = true;
 
-            string Playagain()
+            //While token = true, the game will run on repeat
+            while (token)
             {
-                Console.WriteLine("Vill du spela igen? JA/NEJ");
-                String userAnswer = Console.ReadLine();
-                userAnswer = userAnswer.ToUpper();
-                return userAnswer;
-            }
 
-            bool game = true;
+                //Saves the user number in "userNumber". "tries" saves the amount of tries in itself.
+                Console.WriteLine("Welcome to the numbersgame!");
+                Console.WriteLine("You have 5 tries to guess the number");
 
-            while (game == true)
-            {
-                int tries = 5;
-                Random random = new Random();
-                int generatedNumber = random.Next(1, 21);
+                Console.WriteLine("Please choose the highest number it can be 1 - ?");
 
-                Console.WriteLine("Välkommen! Jag tänker på ett nummer mellan 1-20. Kan du gissa vilket? Du får fem försök.");
-                int playerGuess = Convert.ToInt32(Console.ReadLine());
-                tries--;
-                Console.WriteLine($"Du har nu {tries} försök kvar");
+                //Lets the user decide what the highest number can be and inserts it into the RandomNumberGenerator method
+                int gameNumber = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine($"Guess a number between 1 - {gameNumber}");
 
+                int userNumber = Convert.ToInt32(Console.ReadLine());
+                int tries = 4;
+
+                //A method for generating a random number, inserts gameNumber to the method.
+                int number = RandomNumberGenerator(gameNumber);
+
+                NumberCheck(userNumber, number, tries);
+
+                //This while loop lets the user guess the randomly generated number until either tries run out or when the user guesses the correct number.
+                while (tries > 0 && userNumber != number)
                 {
-                    while (playerGuess != generatedNumber && tries >= 1)
-                    {
-                        if (playerGuess > generatedNumber)
-                        {
-                            Console.WriteLine("Du gissade för högt!");
-                            playerGuess = Convert.ToInt32(Console.ReadLine());
-                            tries--;
-                            Console.WriteLine($"Du har nu {tries} försök kvar");
-                        }
-
-                        if (playerGuess < generatedNumber)
-                        {
-                            Console.WriteLine("Du gissade för lågt!!");
-                            playerGuess = Convert.ToInt32(Console.ReadLine());
-                            tries--;
-                            Console.WriteLine($"Du har nu {tries} försök kvar");
-                        }
-
-                    }
-
-                    if (playerGuess == generatedNumber)
-                    {
-                        Console.WriteLine("Du gissade rätt, Grattis!");
-
-                        if (Playagain() == "JA")
-                        {
-
-                        }
-
-                        else
-                        {
-                            game = false;
-                        }
-
-                    }
-
-                    if (tries <= 0)
-                    {
-                        Console.WriteLine("De är slut.");
-                        if (Playagain() == "JA")
-                        {
-
-                        }
-
-                        else
-                        {
-                            game = false;
-                        }
-
-                    }
+                    tries--;
+                    Console.WriteLine("Try again.");
+                    userNumber = Convert.ToInt32(Console.ReadLine());
+                    //Calls the method NumberCheck and passes the values of the arguments to the method.
+                    NumberCheck(userNumber, number, tries);
 
                 }
 
+                //This if checks if the number is equal to the generated random number
+                if (userNumber == number)
+                {
+                    Console.WriteLine("You guessed correctly!");
+                }
+
+                //This else tells the user if they ran out of tries
+                else
+                {
+                    Console.WriteLine("You've ran out of tries!");
+                }
+
+                //This calls the method "PlayAgain();" and it lets the user decide if they want to play again or not.
+                token = PlayAgain();
+
+            }
+
+            //This is the method that generates a random number between 1 and 20. It then returns number
+            static int RandomNumberGenerator(int gameNumber)
+            {
+                Random random = new Random();
+                int number = random.Next(1, gameNumber + 1);
+                return number;
+
+            }
+
+            //This is a method that lets the user play again. 
+            static bool PlayAgain()
+            {
+                Console.WriteLine("Would you like to play again? Y/N");
+                string choice = Console.ReadLine().ToUpper();
+
+                //If the user wants to play again it returns true to token which starts the game again.
+                if (choice == "Y")
+                {
+                    return true;
+                }
+
+                //if the user decides not to play again it returns false to token which ends the while loop for the game.
+                else if (choice == "N")
+                {
+                    return false;
+                }
+
+                //if the user enters anything other than Y or N it returns the PlayAgain method and lets the user enter the correct input again.
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter Y or N");
+                    return PlayAgain();
+                }
+            }
+
+            //This method compares userNumber and Number and prints out the results to the user.
+            //If userNumber is bigger than number print out too high, if userNumber is smaller than number print out too low
+            static void NumberCheck(int userNumber, int number, int tries)
+            {
+                if (userNumber > number)
+                {
+                    Console.Write("Your guess was abit too high! ");
+                    Console.Write($"You have {tries} tries left. ");
+                }
+
+                else if (userNumber < number)
+                {
+                    Console.Write("Your guess was abit too low! ");
+                    Console.Write($"You have {tries} tries left. ");
+                }
 
             }
 
         }
-
-
 
     }
 }
